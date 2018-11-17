@@ -4,7 +4,10 @@
 
 import __init__
 import os
+import pdb
 import sys
+import pickle
+import numpy as np
 from sklearn import ensemble
 from sklearn import pipeline
 from sklearn.feature_extraction import text
@@ -24,12 +27,12 @@ def train():
                                        ('clf-rf', classifier)])
     
     text_clf_rf.fit(features, labels)
-
-    predictions = classifier.predict(features)
+    #pdb.set_trace()
+    predictions = text_clf_rf.predict(features)
 
     print 'Base training accuracy: %1.4f' % np.mean(predictions == labels)
 
-    return classifier
+    return text_clf_rf
 
 def dev(model):
     """Tests the random forest based on dev data."""

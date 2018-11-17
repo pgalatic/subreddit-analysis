@@ -40,6 +40,11 @@ def train():
     predictions = text_clf_svm.predict(features)
     print 'Base training accuracy: %1.4f' % np.mean(predictions == labels)
 
+    # TODO Support Vector Regression *
+    # TODO Confidence function of text_clf_svm *
+    # TODO Fake reddit posts with one word for each word in vocabulary
+    # TODO Word embeddings
+    # TODO Logistic regression with accuracy *
     return text_clf_svm
     
 def dev(model):
