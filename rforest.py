@@ -6,6 +6,7 @@ import __init__
 import os
 import pdb
 import sys
+import time
 import pickle
 import numpy as np
 from sklearn import ensemble
@@ -20,27 +21,31 @@ def train():
     
     vectorizer = text.CountVectorizer(decode_error='ignore', stop_words='english')
     transformer = text.TfidfTransformer()
-    classifier = ensemble.RandomForestClassifier()
+    classifier = ensemble.RandomForestClassifier(n_estimators=10)
 
-    text_clf_rf = pipeline.Pipeline(steps=[('vect', vectorizer),
+    text_clf = pipeline.Pipeline(steps=[('vect', vectorizer),
                                        ('tfidf', transformer),
                                        ('clf-rf', classifier)])
     
-    text_clf_rf.fit(features, labels)
-    #pdb.set_trace()
-    predictions = text_clf_rf.predict(features)
+    start = time.time()
+    text_clf.fit(features, labels)
+    print 'Training time:\t%1.4f seconds' % (time.time() - start)
+    
+    __init__.evaluate(text_clf, features, labels)
 
-    print 'Base training accuracy: %1.4f' % np.mean(predictions == labels)
-
-    return text_clf_rf
+    return text_clf
 
 def dev(model):
     """Tests the random forest based on dev data."""
     features, labels = __init__.load_data('dev')
     
-    predictions = model.predict(features)
+    __init__.evaluate(model, features, labels)
     
-    print 'Dev training accuracy: %1.4f' % np.mean(predictions == labels)
+def test(model):
+    """Tests the random forest based on test data."""
+    features, labels = __init__.load_data('test')
+    
+    __init__.evaluate(model, features, labels)
 
 if __name__ == '__main__':
     """
@@ -64,6 +69,14 @@ if __name__ == '__main__':
             dev(model)
         else:
             print('Cannot perform dev test with no model. Run train first.')
+            sys.exit(0)
+    elif sys.argv[1] == 'test':
+        if os.path.isfile(MODEL_NAME):
+            with open(MODEL_NAME, 'rb') as f:
+                model = pickle.load(f)
+            test(model)
+        else:
+            print('Cannot perform test with no model. Run train first.')
             sys.exit(0)
     else:
         print('Invalid argument: %s' % sys.argv[1])
