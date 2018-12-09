@@ -1,6 +1,7 @@
 # author: Paul Galatic
 
 import __init__
+import os
 import re
 import json
 import pickle
@@ -12,6 +13,9 @@ if __name__ == '__main__':
     """
     Splits data into train, test, and development sets.
     """
+    
+    if not os.path.isdir('data/'):
+        os.makedirs('data/')
     
     for subreddit in SUBREDDIT_NAMES:
         with open(subreddit + '.json', 'r') as f:

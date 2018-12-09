@@ -52,6 +52,9 @@ def test(model):
     
 def bin(model):
     """Uses binning to identify the posts the model was most uncertain with."""
+    if not os.path.isdir('bins/'):
+        os.makedirs('bins/')
+    
     features, labels = __init__.load_data('train')
     
     features = [feature.replace('\n', '') for feature in features]
