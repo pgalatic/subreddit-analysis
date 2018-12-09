@@ -32,7 +32,7 @@ if __name__ == '__main__':
     cloud_list = []
     for feature_list in feature_lists:
         all_text = ' '.join(feature_list)
-        all_text = all_text.replace('u2019', '').replace('thing', '').replace('x200B', '')
+        all_text = all_text.replace('u2019', '').replace('thing', '').replace('x200B', '').replace('u201d', '')
         cloud = wordcloud.WordCloud(
                         background_color='white',
                         height=1000,
