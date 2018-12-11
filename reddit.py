@@ -4,7 +4,6 @@
 #
 
 import praw
-import oauth_info
 
 class Reddit():
 	"""Class used in order to access Reddit through the PRAW API."""

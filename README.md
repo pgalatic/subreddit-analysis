@@ -18,6 +18,10 @@ It will query (/r/LegalAdvice)[reddit.com/r/LegalAdvice] and (/r/relationships)[
 
 Before you run a classifier, you must split the data with this command:
 
+```
+python split_data.py
+```
+
 ## Building Classifiers
 
 In order to run any of the classifiers, use this style of command:
