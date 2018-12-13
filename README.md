@@ -1,4 +1,4 @@
-AUTHOR: Paul Galatic pdg6505@rit.edu
+AUTHOR: Paul Galatic pgalatic@gmail.com
 
 NOTE: Accuracies reported during your testing may not be exactly the same as those in the pdf report because the data will have been updated slightly. However, they should be similar.
 
