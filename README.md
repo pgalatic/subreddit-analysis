@@ -1,7 +1,5 @@
 AUTHOR: Paul Galatic pdg6505@rit.edu
 
-NOTE: Although this ZIP file contains a git repository, the repo will not become public until after grades are returned.
-
 NOTE: Accuracies reported during your testing may not be exactly the same as those in the pdf report because the data will have been updated slightly. However, they should be similar.
 
 # Subreddit Analysis
