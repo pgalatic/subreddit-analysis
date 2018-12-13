@@ -4,6 +4,14 @@ NOTE: Accuracies reported during your testing may not be exactly the same as tho
 
 # Subreddit Analysis
 
+### /r/LegalAdvice word cloud
+
+![LegalAdvice word cloud](https://github.com/pgalatic/subreddit-analysis/blob/master/LegalAdvice.png)
+
+### /r/relationships word cloud
+
+![relationships word cloud](https://github.com/pgalatic/subreddit-analysis/blob/master/Relationships.png)
+
 ## Setup
 
 In order to continue downloading data, run the following program:
