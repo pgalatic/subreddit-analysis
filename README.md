@@ -14,7 +14,7 @@ In order to continue downloading data, run the following program:
 python download_data.py
 ```
 
-It will query (/r/LegalAdvice)[reddit.com/r/LegalAdvice] and (/r/relationships)[reddit.com/r/relationships] every two hours and download the title+selftext of any post it has not already seen.
+It will query [/r/LegalAdvice](reddit.com/r/LegalAdvice) and [/r/relationships](reddit.com/r/relationships) every two hours and download the title+selftext of any post it has not already seen.
 
 Before you run a classifier, you must split the data with this command:
 
